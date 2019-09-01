@@ -17,9 +17,13 @@
 
     {% if comments %}
     {% for comment in comments %}
-    <p>{{ comment.comments }}</p>
+    <div style="display: flex; ">
+          <p style="font-family: sans-serif; font-style: italic; font-weight: 2em; font-size: 15px">{{ comment.comments }}</p>
+
+    </div>
     {% endfor%}
     {% endif %}
+
   <form  action="{%url 'comment' image.id%}" method="post" enctype="multipart/form-data">
     {%csrf_token%}
 
