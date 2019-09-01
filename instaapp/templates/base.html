@@ -1,4 +1,4 @@
-% load bootstrap3 %}
+{% load bootstrap3 %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -12,7 +12,8 @@
   {% endif %}
 
   {% block styles %}
-    
+  {% load bootstrap3 %} {% load staticfiles %}
+
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">

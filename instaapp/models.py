@@ -16,7 +16,8 @@ class Comments(models.Model):
 
 class Profile(models.Model):
     infor = models.IntegerField(default=0)
-    bio = models.CharField(max_length=70)
+    name=models.CharField( max_length=50, default='Anonym')
+    bio = models.CharField(max_length=80 , blank=True)
     profile_picture = models.ImageField(upload_to='images/', blank=True)
 
     class Meta:

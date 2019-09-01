@@ -7,9 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% block styles %} {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/baseinsta.css' %}"> {% endblock %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}"> {% endblock %}
 </head>
 <body>
+  <!-- empty div -->
+   <div class="col-md-3 col-xs-3 col-sm-3">
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
 
     {% if comments %}
     {% for comment in comments %}
@@ -20,9 +24,12 @@
     {%csrf_token%}
 
     {% bootstrap_form form%}
-    <input type="submit" class="btn btn-success btn-lg" value="Post">
+    <input type="submit" class="btn btn-info btn-sm" value="Post">
   </form>
+   </div>
 
+  <div class="col-md-3 col-xs-3 col-sm-3">
+  </div>
    {% block scripts %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   {% bootstrap_javascript %} {% endblock %}

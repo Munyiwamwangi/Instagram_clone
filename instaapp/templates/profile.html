@@ -6,18 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% block styles %} {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/baseinsta.css' %}"> {% endblock %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}"> {% endblock %}
 </head>
 <body>
+ <div class="col-md-3" >
+  </div>
 
+<div class="col-md-6" >
   <form  action="{%url 'edit_profile_info'%}" method="post" enctype="multipart/form-data">
     {%csrf_token%}
 
     {% bootstrap_form form%}
-    <input type="submit" class="btn btn-success btn-lg" value="Post">
+    <input type="submit" class="btn btn-light btn-small " value="Post">
   </form>
+  </div>
+
+  <div class="col-md-3" >
+  </div>
    {% block scripts %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  {% bootstrap_javascript %} {% endblock %}
+  {% bootstrap_javascript %} 
+  {% endblock %}
 </body>
 </html>
