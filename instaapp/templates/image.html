@@ -1,0 +1,13 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="card-deck">
+    {% for image in all_images %}
+    <div class="col-md-3">
+        <div class="card">
+            <img src="{{image.image.url}}" class="card-img-top" alt="{{image.name}}">
+          </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

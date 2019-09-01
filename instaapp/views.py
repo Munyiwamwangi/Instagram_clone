@@ -97,4 +97,4 @@ def profile(request):
 
         return redirect('welcome')
 
-    return render(request, "edit.html", {"profile": profile, "all_images": all_images})
+    return render(request, "image.html", {"profile": profile, "all_images": all_images})
