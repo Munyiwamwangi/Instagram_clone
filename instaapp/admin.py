@@ -1,10 +1,7 @@
 from django.contrib import admin
-from .models import Article, Comment, Profile
+from .models import Image, Profile, Comments
 
 # Register your models here.
-class ArticleAdmin(admin.ModelAdmin):
-    filter_horizontal = ('comment',)
-
+admin.site.register(Image)
 admin.site.register(Profile)
-admin.site.register(Article, ArticleAdmin)
-admin.site.register(Comment)
+admin.site.register(Comments)
