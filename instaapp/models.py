@@ -1,44 +1,48 @@
-from django.contrib.auth.models import User
 from django.db import models
-import datetime as dt
+from django.contrib.auth.models import User
 
-# Create your models here.    
-class Comment(models.Model):
-    comment=models.TextField()
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
-    
-    
-class Posts(models.Model):
-    story = models.TextField()
-    image = models.ImageField(upload_to='images/', blank=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    comment=models.ManyToManyField(Comment)
+# Create your models here.
+class Comments(models.Model):
+    picture = models.IntegerField(default=0)
+    user = models.ForeignKey(User)
+    comments = models.TextField()
 
-    def __str__(self):
-        return self.story
-
-
-class Profile(models.Model):
-    image = models.ImageField(upload_to='images/', blank=True)
-    name = models.CharField(max_length=60)
-    bio = models.TextField()
-    pub_date = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.name
-
-    def save_article(self):
+    def save_profile(self):
         self.save()
 
-    def delete_Article(self):
+    def delete_profile(self):
+        self.delete()
+        
+
+class Profile(models.Model):
+    infor = models.IntegerField(default=0)
+    bio = models.CharField(max_length=70)
+    profile_picture = models.ImageField(upload_to='images/', blank=True)
+
+    class Meta:
+        ordering = ['profile_picture']
+
+    def save_profile(self):
+        self.save()
+
+    def delete_profile(self):
+        self.delete()
+
+
+class Image(models.Model):
+    name = models.CharField(max_length=70)
+    profile = models.CharField(max_length=30, blank=True)
+    image = models.ImageField(upload_to='images/', blank=True)
+    caption = models.TextField()
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
         self.delete()
 
     @classmethod
-    def days_news(cls, date):
-        news = cls.objects.filter(pub_date__date = date)
-        return news
+    def search_by_image(cls, search_term):
+        images = cls.objects.filter(image__name__icontains=search_term)
+        return images
 
-    @classmethod
-    def search_by_title(cls,search_term):
-        news = cls.objects.filter(title__icontains=search_term)
-        return news
