@@ -43,7 +43,7 @@ def edit_profile_info(request):
     else:
         form = getProfile()
 
-    return render(request, 'Profile.html', {'form': form})
+    return render(request, 'profile.html', {'form': form})
 
 
 @login_required(login_url='/accounts/login/')
