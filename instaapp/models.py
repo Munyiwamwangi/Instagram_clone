@@ -2,15 +2,15 @@ from django.contrib.auth.models import User
 from django.db import models
 import datetime as dt
 
-# Create your models here.
+# Create your models here.    
 class Comment(models.Model):
     comment=models.TextField()
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
 
 class Profile(models.Model):
+    image = models.ImageField(upload_to='images/', blank=True)
     name = models.CharField(max_length=60)
     bio = models.TextField()
-    editor = models.ForeignKey(User,
-        on_delete = models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
