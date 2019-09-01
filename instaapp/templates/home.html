@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+​
+{% block content %}
+<div class="container" >
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-6" style="margin-left:auto; margin-right: auto; width: 40%;">
+            {% for image in images%}
+            <div class="card border-success mb-4" style="max-width: 35rem;ma">
+                <div class="card-header bg-transparent border-success">{{image.name}}</div>
+                <div class="card-body text-success">
+                    <img height="300px" class="card-img-top" src="{{image.image.url}}" alt="Pic Loading">
+
+                </div>
+                <div class="card-footer bg-transparent border-success">
+                    <i class="far fa-heart">Like</i>
+                    <a href="{% url 'comment' image.id %}"> <i class="far fa-comment">Comment</i> </a></div>
+            </div> ​
+            {% empty %}
+            <div class="row">
+                <h2 class="text-center">No Uploaded images yet</h2>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-4">
+                <div class="content-section ">
+                    
+                        {%for i in prof%}
+                        {{i.bio}}
+                        <img height="50" class="img-fluid" src="{{i.profile_picture.url}}" alt="">
+                        {%endfor%}
+                        <div class="card-header">
+                            Stories
+                        </div>
+                        <div class="content">
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                                <li class="list-group-item list-group-item-light">Announcements</li>
+                                <li class="list-group-item list-group-item-light">Trending</li>
+                                <li class="list-group-item list-group-item-light">Hot News</li>
+                                <li class="list-group-item list-group-item-light">Followers</li>
+                                <li class="list-group-item list-group-item-light">Following</li>
+                                <li class="list-group-item list-group-item-light">Posts</li>
+                                <li class="list-group-item list-group-item-light">Suggetions </li>
+                                <li class="list-group-item list-group-item-light">Trending</li>
+                                <li class="list-group-item list-group-item-light">Hot News</li>
+        
+                            </ul>
+                        </div>
+                </div>
+        </div>
+    </div>  
+</div>
+{% endblock%}
