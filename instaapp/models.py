@@ -6,6 +6,17 @@ import datetime as dt
 class Comment(models.Model):
     comment=models.TextField()
     user = models.ForeignKey(User,on_delete=models.CASCADE)
+    
+    
+class Posts(models.Model):
+    story = models.TextField()
+    image = models.ImageField(upload_to='images/', blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment=models.ManyToManyField(Comment)
+
+    def __str__(self):
+        return self.story
+
 
 class Profile(models.Model):
     image = models.ImageField(upload_to='images/', blank=True)
@@ -14,7 +25,7 @@ class Profile(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return self.name
 
     def save_article(self):
         self.save()
