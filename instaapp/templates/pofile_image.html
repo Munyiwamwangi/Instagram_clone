@@ -1,13 +1,18 @@
 
 {% extends 'base.html' %}
 {% block content %}
-<div class="card-deck">
+<!-- empty div -->
+<div class="col-md-4"></div>
+<!-- empry div --><div class="card-deck">
     {% for image in all_images %}
     <div class="col-md-3">
         <div class="card">
             <img src="{{image.image.url}}" class="card-img-top" alt="{{image.name}}">
-          </div>
+        </div>
     </div>
     {% endfor %}
 </div>
+<!-- empty div -->
+<div class="col-md-4"></div>
+<!-- empry div -->
 {% endblock %}
