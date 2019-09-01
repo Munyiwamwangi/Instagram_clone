@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Profile, Comment
+from django.shortcuts import render, redirect
+from .models import Profile, Comment, Posts
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -26,6 +26,31 @@ def edit_profile(request):
         form = getProfile()
 
     return render(request,'Profile.html',{'form':form})
+
+
+@login_required(login_url='/accounts/login/')
+def comment(request, image_id):
+
+    post = Posts.objects.get(id=image_id)
+
+    if request.method == 'POST':
+        current_user = request.user
+        form = Comment(request.POST)
+        if form.is_valid:
+            comments = form.save(commit=False)
+            comments.user = current_user
+            comments.picture = image.id
+            comments.save()
+
+            return redirect('welcome')
+    else:
+        form = Comment()
+
+    comments = Comment.objects.filter(picture=image_id).all
+
+    return render(request, "comment.html", {'form': form, "image": image, "comments": comments})
+
+
 
 def search_results(request):
     if 'image' in request.GET and request.GET["image"]:
