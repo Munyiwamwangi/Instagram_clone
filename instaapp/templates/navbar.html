@@ -1,25 +1,25 @@
-<nav style="margin-bottom:5%" class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a><i class="fab fa-instagram"></i></a>
-      <a class="navbar-brand" href="{% url 'welcome' %}">Instagram</a>
-    </div>
-    <div class="col-sm-4 col-md-4 navbar-center">
-      <form class="navbar-form" role="search" action="{% url 'search_image' %}">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search " name="image">
-          <div class="input-group-btn">
-            <button class="btn btn-sm btn-info nav-item" type="submit"><i class="glyphicon glyphicon-search">Search</i></button>
-          </div>
+    <nav style="margin-bottom:5%" class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a><i class="fab fa-instagram"></i></a>
+          <a class="navbar-brand" href="{% url 'welcome' %}">Instagram</a>
         </div>
-      </form>
-      </div>
-      <h5><a  href="{%url 'uploadPhoto'%}">Upload Photo</a></h5>
-      <a  href="{% url 'edit_profile_info' %}"><i class="fas fa-user">Account</i></a>
-      <ul>
-        <li>
+        <div class="col-sm-4 col-md-4 navbar-center">
+          <form class="navbar-form" role="search" action="{% url 'search_image' %}">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search " name="image">
+              <div class="input-group-btn">
+                <button class="btn btn-sm btn-info nav-item" type="submit"><i class="glyphicon glyphicon-search">Search</i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <h5><a  href="{%url 'uploadPhoto'%}">Upload Photo</a></h5>
+        <a  href="{% url 'edit_profile_info' %}"><i class="fas fa-user">Account</i></a>
+        <ul>
+          <li>
             <a href="/logout"><i class="fas fa-sign-out-alt">Logout</i></a>
-        </li>
-      </ul>
-  </div>
-</nav>
+          </li>
+        </ul>
+      </div>
+    </nav>

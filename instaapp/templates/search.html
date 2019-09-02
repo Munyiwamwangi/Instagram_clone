@@ -1,25 +1,26 @@
-{%extends 'base.html'%} 
-{% block content %}
-<div class="container">
-  <div class="row">
-    {% if images %}
+  {%extends 'base.html'%} 
+  {% block content %}
+  <div class="container">
+    <div class="row">
+      {% if images %}
       <h5 style="font-style: oblique; color: cyan">Found {{ images|length }} of searched posts {{message}}</h5> 
       <br>
-    {% else %}
+      {% else %}
+      <br>
       <h5 style="font-style: oblique; color: cyan"> Found 0 items for the search term {{message}}</h5>
-       <br>
-    {% endif %}
+      
+      {% endif %}
 
-  </div>
-  <div class="row">
-  {% if images %}
-    {% for image in images %}
+    </div>
+    <div class="row">
+      {% if images %}
+      {% for image in images %}
       <div class="col-sm-6 col-md-3">
-          <h1>{{image.name}}</h1>
-          <img src="{{image.image.url}}">
+        <h1>{{image.name}}</h1>
+        <img src="{{image.image.url}}">
       </div>
-    {% endfor %}
-  {% endif %}
+      {% endfor %}
+      {% endif %}
+    </div>
   </div>
-</div>
-{% endblock %}
+  {% endblock %}
