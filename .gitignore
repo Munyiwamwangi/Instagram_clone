@@ -1,0 +1,8 @@
+.env
+.virtual
+.static
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
