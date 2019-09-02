@@ -21,3 +21,14 @@ A web app that takes on the fetaures of the existing instagram. Designed for lea
 - CSS - used for customized styling
 - Google Fonts - Attractive fonts to reduce monotony
 
+#### Set up instructions
+
+Go to the choosen directory and Clone into the repo
+	-https://github.com/Munyiwamwangi/Instagram.git
+	-A required set up of version 3.6+ of python is a must. 
+	-For further knowledge cincerning this you can visit UbuntuHandBook or google if you are using windows.
+	- (http://ubuntuhandbook.org/index.php/2017/07/install-python-3-6-1-in-ubuntu-16-04-lts/)
+	- For windows users:
+	- (https://realpython.com/installing-python/)
+	-Then install virtual environment and django as directed at
+	- (https://www.djangoproject.com/start/)
