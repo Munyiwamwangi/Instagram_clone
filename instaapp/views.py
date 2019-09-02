@@ -84,7 +84,6 @@ def comment(request, image_id):
 
     return render(request, "comment.html", {'form': form, "image": image, "comments": comments})
 
-
 @login_required(login_url='/accounts/login/')
 def profile(request):
     users = request.user.id
@@ -94,7 +93,5 @@ def profile(request):
         all_images = Image.objects.filter(infor=request.user.id).all()
 
     except ObjectDoesNotExist:
-
         return redirect('welcome')
-
     return render(request, "pofile_image.html", {"profile": profile, "all_images": all_images})
