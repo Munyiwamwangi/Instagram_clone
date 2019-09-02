@@ -1,13 +1,10 @@
 {% extends 'base.html'%}
-​
 {% block content %}
 <div class="container" >
     <div class="row">
-        <div class="col-md-2">
-        </div>
-        <div class="col-md-6" style="margin-left:auto; margin-right: auto; width: 40%;">
+        <div class="col-md-6" style="margin-left:auto; margin-right: auto;">
             {% for image in images%}
-            <div class="card border-success mb-4" style="max-width: 35rem;ma">
+            <div class="card border-info mb-4" style="max-width: 35rem;">
                 <div class="card-header bg-transparent border-success">{{image.name}}</div>
                 <div class="card-body text-success">
                     <img height="300px" class="card-img-top" src="{{image.image.url}}" alt="Pic Loading">
