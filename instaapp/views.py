@@ -95,3 +95,11 @@ def profile(request):
     except ObjectDoesNotExist:
         return redirect('welcome')
     return render(request, "pofile_image.html", {"profile": profile, "all_images": all_images})
+
+
+@login_required(login_url='/accounts/login/')
+def single_image_like(request, image_id):
+    image = Image.objects.get(id=image_id)
+    image.likes = image.likes + 1
+    image.save()
+    return redirect('likes')
