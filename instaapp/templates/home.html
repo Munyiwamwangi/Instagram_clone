@@ -2,12 +2,12 @@
 {% block content %}
 <div class="container" >
     <div class="row">
-        <div class="col-md-6" style="margin-left:auto; margin-right: auto;">
+        <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8" style="margin-left:auto; margin-right: auto;">
             {% for image in images%}
-            <div class="card border-info mb-4" style="max-width: 35rem;">
-                <div class="card-header bg-transparent border-success">{{image.name}}</div>
+            <div class="border-info mb-4">
+                <div class="card-header bg-transparent border-info">{{image.name}}</div>
                 <div class="card-body text-success">
-                    <img height="300px" class="card-img-top" src="{{image.image.url}}" alt="Pic Loading">
+                    <img  class="card-img-top img-fluid" src="{{image.image.url}}" alt="Pic Loading">
 
                 </div>
                 <div class="card-footer bg-transparent border-success">
@@ -20,12 +20,12 @@
             </div>
             {% endfor %}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
                 <div class="content-section ">
                     
-                        {%for i in prof%}
-                        {{i.bio}}
-                        <img height="50" class="img-fluid" src="{{i.profile_picture.url}}" alt="">
+                        {%for profileinformation in prof%}
+                        {{profileinformation.bio}}
+                        <img height="50" class="img-fluid" src="{{profileinformation.profile_picture.url}}" alt="image">
                         {%endfor%}
                         <div class="card-header">
                             Stories
