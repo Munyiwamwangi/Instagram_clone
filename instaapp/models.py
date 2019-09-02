@@ -35,7 +35,6 @@ class Image(models.Model):
     profile = models.CharField(max_length=30, blank=True)
     image = models.ImageField(upload_to='images/', blank=True)
     caption = models.TextField()
-    likes = models.IntegerField(default=0)
 
     def save_image(self):
         self.save()
@@ -44,11 +43,7 @@ class Image(models.Model):
         self.delete()
 
     @classmethod
-    def search_by_user(cls, search_term):
-        images = cls.objects.filter(image_caption__icontains=search_term)
+    def search_by_name(cls, search_term):
+        images = cls.objects.filter(image__name__icontains=search_term)
         return images
 
-    @classmethod
-    def get_image_by_id(cls, image_id):
-        images = cls.objects.get(id=image_id)
-        return images
