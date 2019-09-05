@@ -1,7 +1,7 @@
 # Author: Munyi Mwangi
 
 A web app that takes on the fetaures of the existing instagram. Designed for learning purposes.
-[Live Site](https://shashin-o-mimasu.herokuapp.com/login/)
+[Live Site](https://joeig.herokuapp.com/)
 
 ## BDD
 
