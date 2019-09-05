@@ -46,6 +46,8 @@ https://joeig.herokuapp.com/
 
 Another piece by author;
 
+This is a Quotes App that allows you to create and share quotes with others, they can downvote or upvote the quotes and the highest rated quote is higlighted as the quote of the day
+
 <a href="https://munyiwamwangi.github.io/Quotes-App/">Link to live site</a>
 
 ## Contacts
