@@ -1,11 +1,11 @@
 # Author: Munyi Mwangi
 
 A web app that takes on the fetaures of the existing instagram. Designed for learning purposes.
-[Live Site](https://joeig.herokuapp.com/)
+[Live Site](https://joig.herokuapp.com/)
 
 ## BDD
 
-| Given       | Action       | Result  |
+| Input       | Action       | Output  |
 | ------------- |:-------------:| -----:|
 | User wants to sign up | They fill out the sign up form | They are logged in using the created credentials |
 | User wants to upload an image | They fill up the post creation form and submit | The image is uploaded and displayed to their followers  |
@@ -40,9 +40,9 @@ We use currently have only the first version of this application.
 
 ## Link to live App
 
-https://joeig.herokuapp.com/
+https://joig.herokuapp.com/
 
-<a href="https://joeig.herokuapp.com/">Link to see site</a>
+<a href="https://joig.herokuapp.com/">Link to see site</a>
 
 Another piece by author;
 
